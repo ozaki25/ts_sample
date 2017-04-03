@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ts sample</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div id="root-region"></div>
+
+    <script id="root-view" type="text/template">
+      <div id="header-region"></div>
+      <div id="main-region"></div>
+    </script>
+
+    <script id="header-view" type="text/template">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-links">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">ts sample</a>
+          </div>
+        </div>
+      </nav>
+    </script>
+
+    <script id="top-view" type="text/template">
+      <div class="panel panel-default">
+        <div class="panel-heading">メニュー</div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="panel panel-default">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <a href="#" id="to-register-link">ユーザ登録</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#" id="to-search-link">ユーザ検索</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+
+    <script src="dist/bundle.js"></script>
+  </body>
+</html>
