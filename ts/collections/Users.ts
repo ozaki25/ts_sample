@@ -11,9 +11,5 @@ export default class Users extends Backbone.Collection<User> {
         };
         super(models, Backbone.$.extend({}, defaultOptions, options));
         this.localStorage = new Backbone.LocalStorage('ts_sample_users');
-        // this.setDefault();
-    }
-    setDefault() {
-        _.each([{ name: 'Test1', age: 25 }, { name: 'Test2', age: 30 }, { name: 'Test3', age: 35 }], (data) => this.create(data));
     }
 }

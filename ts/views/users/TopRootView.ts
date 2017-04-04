@@ -1,6 +1,5 @@
 import * as Backbone from 'backbone';
 import * as Marionette from 'backbone.marionette';
-import Users from '../../collections/Users';
 import HeaderView from '../HeaderView';
 import TopView from './TopView';
 
@@ -25,9 +24,6 @@ export default class TopRootView extends Marionette.View<Backbone.Model> {
         this.getRegion('headerRegion').show(new HeaderView());
     }
     renderMain() {
-        const users = new Users();
-        users.fetch().done(() => {
-            this.getRegion('mainRegion').show(new TopView({ collection: users }));
-        });
+        this.getRegion('mainRegion').show(new TopView());
     }
 }

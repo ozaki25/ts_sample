@@ -6,6 +6,7 @@ import * as Backbone from 'backbone';
 import * as Marionette from 'backbone.marionette';
 import TopRootView from './views/users/TopRootView';
 import SearchRootView from './views/users/SearchRootView';
+import RegisterRootView from './views/users/RegisterRootView';
 
 const app = new Marionette.Application({
     region: '#root-region',
@@ -32,7 +33,7 @@ class AppRouter extends Marionette.AppRouter {
                     app.getRegion().show(new SearchRootView());
                 },
                 register: () => {
-                    // app.getRegion().show(new TopRootView());
+                    app.getRegion().show(new RegisterRootView());
                 },
             }
         };

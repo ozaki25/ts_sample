@@ -2,14 +2,14 @@ import * as Backbone from 'backbone';
 import * as Marionette from 'backbone.marionette';
 import Users from '../../collections/Users';
 import HeaderView from '../HeaderView';
-import SearchView from './SearchView';
+import RegisterView from './RegisterView';
 
-export default class TopRootView extends Marionette.View<Backbone.Model> {
+export default class RegisterRootView extends Marionette.View<Backbone.Model> {
     constructor(options: any = {}) {
-        const defaultOptions = {
+        const defaulregistertions = {
             template: '#root-view'
         };
-        super(Backbone.$.extend({}, defaultOptions, options));
+        super(Backbone.$.extend({}, defaulregistertions, options));
     }
     regions() {
         return {
@@ -25,9 +25,6 @@ export default class TopRootView extends Marionette.View<Backbone.Model> {
         this.getRegion('headerRegion').show(new HeaderView());
     }
     renderMain() {
-        const users = new Users();
-        users.fetch().done(() => {
-            this.getRegion('mainRegion').show(new SearchView({ collection: users }));
-        });
+        this.getRegion('mainRegion').show(new RegisterView({ collection: new Users() }));
     }
 }
