@@ -1,7 +1,7 @@
 import * as Backbone from 'backbone';
 import * as Marionette from 'backbone.marionette';
 
-export default class TopRootView extends Marionette.View<Backbone.Model> {
+export default class TopView extends Marionette.View<Backbone.Model> {
     constructor(options: any = {}) {
         const defaultOptions = {
             template: '#top-view',
@@ -22,9 +22,11 @@ export default class TopRootView extends Marionette.View<Backbone.Model> {
     onClickToRegister(e: any) {
         e.preventDefault();
         console.log('to register page');
+        Backbone.history.navigate('register', { trigger: true });
     }
     onClickToSearch(e: any) {
         e.preventDefault();
         console.log('to search page');
+        Backbone.history.navigate('search', { trigger: true });
     }
 }
