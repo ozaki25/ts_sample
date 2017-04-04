@@ -54,9 +54,21 @@
     <script id="search-view" type="text/template">
       <div class="panel panel-default">
         <div class="panel-heading">検索</div>
-        <div class="panel-body"></div>
+        <div id="search-form-region" class="panel-body"></div>
         <div id="search-table-region"></div>
       </div>
+    </script>
+
+    <script id="search-form-view" type="text/template">
+      <div class="form-group">
+        <label class="control-label">名前</label>
+        <input id="search-name" class="form-control">
+      </div>
+      <div class="form-group">
+        <label class="control-label">年齢</label>
+        <input id="search-age" class="form-control">
+      </div>
+      <button id="search" class="btn btn-default">検索</button>
     </script>
 
     <script id="search-empty-view" type="text/template">

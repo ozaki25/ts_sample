@@ -23,6 +23,7 @@ gulp.task('browserify', () => {
     })
         .plugin(tsify, {
             "noImplicitAny": true,
+            "suppressImplicitAnyIndexErrors": true
         })
         .bundle()
         .pipe(source('bundle.js'))
