@@ -1,5 +1,7 @@
+import * as _ from 'underscore';
 import * as Backbone from 'backbone';
 import * as Marionette from 'backbone.marionette';
+import User from '../../models/User';
 import SearchFormView from './SearchFormView';
 import SearchTableView from './SearchTableView';
 import SearchEmptyView from './SearchEmptyView';
@@ -23,7 +25,7 @@ export default class SearchView extends Marionette.View<Backbone.Model> {
     }
     childViewEvents() {
         return {
-            'search': 'onSearch',
+            'submit:query': 'search',
         };
     }
     onRender() {
@@ -37,7 +39,11 @@ export default class SearchView extends Marionette.View<Backbone.Model> {
         const view = this.collection.length ? new SearchTableView({ collection: this.collection }) : new SearchEmptyView();
         this.getRegion('searchTableRegion').show(view);
     }
-    onSearch(view: any, query: any) {
+    search(query: any) {
         console.log(query);
+        this.collection.fetch().done(() => {
+            const result = this.collection.filter(query);
+            this.collection.reset(result);
+        });
     }
 }

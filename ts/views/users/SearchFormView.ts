@@ -24,12 +24,12 @@ export default class SearchFormView extends Marionette.View<Backbone.Model> {
     }
     onClickSearch(e: any) {
         e.preventDefault();
-        this.triggerMethod('search', this, this.getInput());
+        this.triggerMethod('submit:query', this.getInput());
     }
     getInput() {
         const query = {};
-        const properties = _.keys(User.properties);
-        _.each(properties, (prop) => {
+        const propertyNames = _.keys(User.properties);
+        _.each(propertyNames, (prop) => {
             const input = this.ui[prop].val().trim();
             if(input) query[prop] = input;
         });

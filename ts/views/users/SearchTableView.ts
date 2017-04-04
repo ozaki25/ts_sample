@@ -6,7 +6,7 @@ export default class SearchTableView extends Marionette.View<Backbone.Model> {
     constructor(options: any = {}) {
         const defaultOptions = {
             tagName: 'table',
-            className: 'table table-condensed',
+            className: 'table',
             template: '#search-table-view',
         };
         super(Backbone.$.extend({}, defaultOptions, options));
