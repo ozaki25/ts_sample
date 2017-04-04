@@ -1,6 +1,7 @@
 import * as Backbone from 'backbone';
 import * as Marionette from 'backbone.marionette';
 import SearchTableView from './SearchTableView';
+import SearchEmptyView from './SearchEmptyView';
 
 export default class SearchView extends Marionette.View<Backbone.Model> {
     constructor(options: any = {}) {
@@ -22,6 +23,7 @@ export default class SearchView extends Marionette.View<Backbone.Model> {
         this.renderSearchTable();
     }
     renderSearchTable() {
-        this.getRegion('searchTableRegion').show(new SearchTableView({ collection: this.collection }));
+        const view = this.collection.length ? new SearchTableView({ collection: this.collection }) : new SearchEmptyView();
+        this.getRegion('searchTableRegion').show(view);
     }
 }
