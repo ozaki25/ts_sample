@@ -54,9 +54,28 @@
     <script id="search-view" type="text/template">
       <div class="panel panel-default">
         <div class="panel-heading">検索</div>
-        <div class="panel-body">
-        </div>
+        <div class="panel-body"></div>
+        <div id="search-table-region"></div>
       </div>
+    </script>
+
+    <script id="search-table-view" type="text/template">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>名前</th>
+            <th>年齢</th>
+          </tr>
+        </thead>
+        <tbody id="search-table-body"></tbody>
+      </table>
+    </script>
+
+    <script id="search-table-row-view" type="text/template">
+      <th><%- id %></th>
+      <th><%- name %></th>
+      <th><%- age %></th>
     </script>
 
     <script src="dist/bundle.js"></script>
