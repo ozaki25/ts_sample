@@ -24,6 +24,7 @@ class AppRouter extends Marionette.AppRouter {
                 'top'     : 'top',
                 'search'  : 'search',
                 'register': 'register',
+                'edit'    : 'edit',
             },
             controller: {
                 top: () => {
@@ -34,6 +35,10 @@ class AppRouter extends Marionette.AppRouter {
                 },
                 register: () => {
                     app.getRegion().show(new RegisterRootView());
+                },
+                edit: () => {
+                    alert('Edit');
+                    // app.getRegion().show(new EditRootView());
                 },
             }
         };
