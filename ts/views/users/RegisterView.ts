@@ -9,6 +9,8 @@ export default class RegisterView extends Marionette.View<Backbone.Model> {
             ui: {
                 inputName: '#input-name',
                 inputAge: '#input-age',
+                inputBlood: '#input-blood',
+                inputSex: '#input-sex',
                 submit: '#submit',
             }
         };
@@ -32,6 +34,8 @@ export default class RegisterView extends Marionette.View<Backbone.Model> {
         return {
             name: this.ui.inputName.val(),
             age: this.ui.inputAge.val(),
+            blood: this.ui.inputBlood.val(),
+            sex: this.ui.inputSex.find(':checked').val(),
         };
     }
 }

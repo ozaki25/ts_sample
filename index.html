@@ -109,6 +109,27 @@
               <label class="control-label">年齢</label>
               <input id="input-age" class="form-control">
             </div>
+            <div class="form-group">
+              <label class="control-label">血液型</label>
+              <select id="input-blood" class="form-control">
+                <option value="">-</option>
+                <option value="0">A</option>
+                <option value="1">B</option>
+                <option value="2">O</option>
+                <option value="3">AB</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="control-label">性別</label>
+              <div id="input-sex" class="btn-group" data-toggle="buttons">
+                <label class="btn btn-default">
+                  <input type="radio" name="sex" value="m">男
+                </label>
+                <label class="btn btn-default">
+                  <input type="radio" name="sex" value="f">女
+                </label>
+              </div>
+            </div>
             <button id="submit" class="btn btn-default">作成</button>
           </form>
         </div>
