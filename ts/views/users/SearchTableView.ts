@@ -19,9 +19,9 @@ export default class SearchTableView extends Marionette.View<Backbone.Model> {
             }
         };
     }
-    childViewTriggers() {
+    childViewEvents() {
         return {
-            'click:edit': 'child:click:edit',
+            'click:edit': 'onClickEdit'
         };
     }
     onRender() {
@@ -30,8 +30,9 @@ export default class SearchTableView extends Marionette.View<Backbone.Model> {
     renderSearchTableBody() {
         this.getRegion('searchTableBodyRegion').show(new SearchTableBodyView({ collection: this.collection }));
     }
-    onChildClickEdit(id: string) {
-        console.log(`to edit, id: ${id}`);
+    onClickEdit(view: any, e: any) {
+        e.preventDefault();
+        console.log(`to edit, id: ${view.model.id}`);
         Backbone.history.navigate('edit', { trigger: true });
     }
 }
