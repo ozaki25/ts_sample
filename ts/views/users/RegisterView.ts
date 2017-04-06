@@ -11,6 +11,7 @@ export default class RegisterView extends Marionette.View<Backbone.Model> {
                 inputAge: '#input-age',
                 inputBlood: '#input-blood',
                 inputSex: '#input-sex',
+                inputBirth: '#input-birth',
                 submit: '#submit',
             }
         };
@@ -20,6 +21,13 @@ export default class RegisterView extends Marionette.View<Backbone.Model> {
         return {
             'click @ui.submit': 'onClickSubmit',
         };
+    }
+    onDomRefresh() {
+        this.ui.inputBirth.datepicker({
+            format: 'yyyy/mm/dd',
+            language: 'ja',
+            autoclose: true
+        });
     }
     onClickSubmit(e: any) {
         e.preventDefault();
